@@ -6,7 +6,8 @@ import {
     ListItem,
     Icon,
     Grid,
-    PseudoBox
+    PseudoBox,
+    useColorMode
 } from "@chakra-ui/core";
 import BusinessService from "../services/business";
 import {
@@ -15,6 +16,8 @@ import {
 
 export default function Businesses() {
     const [businesses, setBusinesses] = useState([]);
+    const { colorMode, toggleColorMode } = useColorMode();
+    const bgColor = { light: "white", dark: "blue.500" };
 
     useEffect(() => {
         retrieveBusinesses();
@@ -51,7 +54,7 @@ export default function Businesses() {
                                         p={5}
                                         mb="5"
                                         cursor="pointer"
-                                        bg="white"
+                                        bg={bgColor[colorMode]}
                                         boxShadow="md"
                                         _hover={{ bg: "blue.500" }}
                                     >
@@ -59,12 +62,11 @@ export default function Businesses() {
                                             fontWeight="semibold"
                                             fontSize="lg"
                                             mb={1}
-                                            color="gray.900"
                                             _groupHover={{ color: "white" }}
                                         >
                                             {business.name}
                                         </PseudoBox>
-                                        <PseudoBox color="gray.700" mb={2} _groupHover={{ color: "white" }}>
+                                        <PseudoBox mb={2} _groupHover={{ color: "white" }}>
                                             Create a new project from a variety of starting templates.
                                             </PseudoBox>
                                     </PseudoBox>
