@@ -51,7 +51,6 @@ const NavBar = props => {
         flexGrow={1}
       >
         <MenuItems link="/business" text="Businesses"></MenuItems>
-        <MenuItems link="/business" text="Locations">Locations</MenuItems>
       </Box>
 
       <Box

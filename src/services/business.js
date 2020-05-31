@@ -4,6 +4,10 @@ const getAll = () => {
   return http.get(`/businesses`);
 };
 
+const getAllLocations = id => {
+  return http.get(`/businesses/${id}/locations`);
+};
+
 const get = id => {
   return http.get(`/businesses/${id}`);
 };
@@ -19,6 +23,7 @@ const update = (data, id) => {
 
 export default {
   getAll,
+  getAllLocations,
   get,
   create,
   update

@@ -8,6 +8,7 @@ import {
   Button,
 } from "@chakra-ui/core";
 import BusinessService from "../services/business";
+import Locations from "./locations";
 
 
 const ManageBusiness = props => {
@@ -111,6 +112,7 @@ const ManageBusiness = props => {
       >
         Submit
       </Button>
+        <Locations id={props.match.params.id}/>
     </form>
   );
 }
